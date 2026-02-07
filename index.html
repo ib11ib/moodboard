@@ -2,719 +2,954 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Ваша Лучшая Версия - Полный Гид</title>
+    
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400;600&display=swap');
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background: #f8f5f2;
-            color: #4a4a4a;
-            line-height: 1.6;
-        }
-        
-        h1, h2, h3 {
-            font-family: 'Cormorant Garamond', serif;
-        }
-        
-        .container {
-            max-width: 1600px;
-            margin: 0 auto;
-            background: white;
-        }
-        
-        /* HEADER */
-        .hero {
-            background: linear-gradient(135deg, #e8d5d0 0%, #d4bfb8 100%);
-            padding: 60px 40px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero::before {
-            content: '✨';
-            position: absolute;
-            font-size: 100px;
-            opacity: 0.1;
-            top: 20px;
-            left: 10%;
-        }
-        
-        .hero::after {
-            content: '💫';
-            position: absolute;
-            font-size: 80px;
-            opacity: 0.1;
-            bottom: 20px;
-            right: 10%;
-        }
-        
-        .hero h1 {
-            font-size: 4em;
-            font-weight: 300;
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-            margin-bottom: 15px;
-            letter-spacing: 4px;
-        }
-        
-        .hero p {
-            font-size: 1.4em;
-            color: rgba(255,255,255,0.95);
-            font-style: italic;
-        }
-        
-        /* NAVIGATION TABS */
-        .nav-tabs {
-            display: flex;
-            justify-content: center;
-            background: #f5ebe8;
-            padding: 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        
-        .nav-tab {
-            padding: 20px 30px;
-            cursor: pointer;
-            border: none;
-            background: transparent;
-            font-size: 1.1em;
-            font-weight: 600;
-            color: #8a7273;
-            transition: all 0.3s;
-            border-bottom: 3px solid transparent;
-        }
-        
-        .nav-tab:hover {
-            background: rgba(212, 191, 184, 0.2);
-            color: #6a5253;
-        }
-        
-        .nav-tab.active {
-            border-bottom: 3px solid #c8a59d;
-            color: #6a5253;
-            background: white;
-        }
-        
-        /* MAIN CONTENT GRID */
-        .main-grid {
-            display: grid;
-            grid-template-columns: 400px 1fr;
-            min-height: 600px;
-        }
-        
-        /* SIDEBAR WITH PHOTO */
-        .sidebar {
-            background: linear-gradient(180deg, #f9f6f4 0%, #f0ebe8 100%);
-            padding: 40px;
-            border-right: 1px solid #e8ddd8;
-            position: sticky;
-            top: 70px;
-            height: fit-content;
-        }
-        
-        .photo-container {
-            margin-bottom: 30px;
-        }
-        
-        .main-photo {
-            width: 100%;
-            border: 10px solid white;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-            border-radius: 5px;
-        }
-        
-        .quick-info {
-            background: white;
-            padding: 25px;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            margin-bottom: 20px;
-        }
-        
-        .quick-info h3 {
-            color: #c8a59d;
-            font-size: 1.6em;
-            margin-bottom: 15px;
-            text-align: center;
-        }
-        
-        .info-item {
-            padding: 10px 0;
-            border-bottom: 1px solid #f0ebe8;
-        }
-        
-        .info-item:last-child {
-            border-bottom: none;
-        }
-        
-        .info-label {
-            font-weight: 600;
-            color: #8a7273;
-            font-size: 0.9em;
-        }
-        
-        .info-value {
-            color: #4a4a4a;
-            font-size: 1.05em;
-        }
-        
-        /* CONTENT SECTIONS */
-        .content {
-            padding: 40px;
-        }
-        
-        .section {
-            display: none;
-        }
-        
-        .section.active {
-            display: block;
-        }
-        
-        .section-header {
-            font-size: 2.5em;
-            color: #c8a59d;
-            margin-bottom: 30px;
-            padding-bottom: 15px;
-            border-bottom: 3px solid #e8d5d0;
-        }
-        
-        /* COLORTYPE COMPARISON */
-        .colortype-comparison {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin-bottom: 40px;
-        }
-        
-        .colortype-card {
-            background: linear-gradient(135deg, #fff9f7 0%, #f5ebe8 100%);
-            padding: 30px;
-            border-radius: 15px;
-            border: 3px solid #e8d5d0;
-            position: relative;
-        }
-        
-        .colortype-card.recommended {
-            border-color: #c8a59d;
-            box-shadow: 0 8px 25px rgba(200, 165, 157, 0.3);
-        }
-        
-        .colortype-card.recommended::before {
-            content: '⭐ РЕКОМЕНДУЕТСЯ';
-            position: absolute;
-            top: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #c8a59d;
-            color: white;
-            padding: 8px 20px;
-            border-radius: 20px;
-            font-size: 0.85em;
-            font-weight: 600;
-        }
-        
-        .colortype-card h3 {
-            font-size: 2em;
-            color: #8a7273;
-            margin-bottom: 15px;
-            text-align: center;
-        }
-        
-        .colortype-description {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-        }
-        
-        .color-swatches {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 10px;
-            margin-top: 20px;
-        }
-        
-        .color-swatch {
-            aspect-ratio: 1;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-            display: flex;
-            align-items: flex-end;
-            padding: 8px;
-            color: white;
-            font-size: 0.75em;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-            font-weight: 600;
-        }
-        
-        .test-box {
-            background: #fff5f0;
-            border-left: 4px solid #e8a59d;
-            padding: 20px;
-            margin-top: 20px;
-            border-radius: 5px;
-        }
-        
-        .test-box h4 {
-            color: #c8a59d;
-            margin-bottom: 10px;
-            font-size: 1.2em;
-        }
-        
-        /* MISTAKES SECTION */
-        .mistakes-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 25px;
-            margin-bottom: 40px;
-        }
-        
-        .mistake-card {
-            background: #fff5f5;
-            border-left: 5px solid #d4a5a5;
-            padding: 25px;
-            border-radius: 10px;
-        }
-        
-        .mistake-card h4 {
-            color: #c97676;
-            font-size: 1.3em;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .mistake-card h4::before {
-            content: '❌';
-            font-size: 1.2em;
-        }
-        
-        .fix-section {
-            background: #f0f9f5;
-            border-left: 5px solid #a5d4b5;
-            padding: 15px;
-            margin-top: 15px;
-            border-radius: 5px;
-        }
-        
-        .fix-section h5 {
-            color: #5a8a6a;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .fix-section h5::before {
-            content: '✅';
-        }
-        
-        /* MAKEUP VISUAL GUIDE */
-        .makeup-steps {
-            display: grid;
-            gap: 30px;
-        }
-        
-        .makeup-step {
-            background: linear-gradient(135deg, #fff 0%, #faf8f6 100%);
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-        }
-        
-        .step-header {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            margin-bottom: 20px;
-        }
-        
-        .step-number {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #e8d5d0, #d4bfb8);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8em;
-            font-weight: 600;
-            color: white;
-            flex-shrink: 0;
-        }
-        
-        .step-title {
-            font-size: 1.8em;
-            color: #6a5253;
-        }
-        
-        .step-content {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 25px;
-        }
-        
-        .step-description {
-            padding-right: 20px;
-        }
-        
-        .step-visual {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            border: 2px solid #f0ebe8;
-            text-align: center;
-        }
-        
-        .product-recommendation {
-            background: #f9f6f4;
-            padding: 15px;
-            border-radius: 8px;
-            margin-top: 15px;
-            border-left: 3px solid #c8a59d;
-        }
-        
-        .product-recommendation h5 {
-            color: #8a7273;
-            margin-bottom: 8px;
-            font-size: 1.1em;
-        }
-        
-        /* COLOR VISUALIZATION */
-        .makeup-color-demo {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-            margin-top: 10px;
-        }
-        
-        .color-demo-item {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
-            position: relative;
-            cursor: pointer;
-            transition: transform 0.2s;
-        }
-        
-        .color-demo-item:hover {
-            transform: scale(1.1);
-        }
-        
-        .color-demo-label {
-            position: absolute;
-            bottom: -25px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 0.75em;
-            white-space: nowrap;
-            color: #6a5253;
-            font-weight: 600;
-        }
-        
-        /* HAIRSTYLE GUIDE */
-        .hairstyle-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-            margin-top: 30px;
-        }
-        
-        .hairstyle-card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-        
-        .hairstyle-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .hairstyle-image {
-            width: 100%;
-            height: 250px;
-            background: linear-gradient(135deg, #f5ebe8, #e8d5d0);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4em;
-            color: rgba(106, 82, 83, 0.3);
-        }
-        
-        .hairstyle-info {
-            padding: 20px;
-        }
-        
-        .hairstyle-info h4 {
-            color: #6a5253;
-            font-size: 1.4em;
-            margin-bottom: 10px;
-        }
-        
-        .hairstyle-steps {
-            list-style: none;
-            padding-left: 0;
-        }
-        
-        .hairstyle-steps li {
-            padding: 8px 0;
-            padding-left: 25px;
-            position: relative;
-            font-size: 0.95em;
-            color: #6a6a6a;
-        }
-        
-        .hairstyle-steps li::before {
-            content: '→';
-            position: absolute;
-            left: 0;
-            color: #c8a59d;
-            font-weight: bold;
-        }
-        
-        /* OUTFIT BUILDER */
-        .outfit-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            margin-top: 30px;
-        }
-        
-        .outfit-card {
-            background: linear-gradient(135deg, #fff 0%, #faf8f6 100%);
-            border-radius: 15px;
-            padding: 25px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-        }
-        
-        .outfit-card h4 {
-            color: #c8a59d;
-            font-size: 1.6em;
-            margin-bottom: 20px;
-            text-align: center;
-            border-bottom: 2px solid #e8d5d0;
-            padding-bottom: 15px;
-        }
-        
-        .outfit-items {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-        
-        .outfit-item {
-            background: white;
-            padding: 15px;
-            border-radius: 10px;
-            border-left: 4px solid #c8a59d;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        
-        .outfit-icon {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, #e8d5d0, #d4bfb8);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5em;
-            flex-shrink: 0;
-        }
-        
-        .outfit-item-details {
-            flex: 1;
-        }
-        
-        .outfit-item-name {
-            font-weight: 600;
-            color: #6a5253;
-            margin-bottom: 3px;
-        }
-        
-        .outfit-item-color {
-            font-size: 0.9em;
-            color: #8a7273;
-        }
-        
-        /* FIGURE GUIDE */
-        .figure-section {
-            background: linear-gradient(135deg, #fff9f7 0%, #f5ebe8 100%);
-            padding: 30px;
-            border-radius: 15px;
-            margin-bottom: 30px;
-        }
-        
-        .figure-visual {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin-top: 20px;
-        }
-        
-        .dos-donts {
-            background: white;
-            padding: 25px;
-            border-radius: 10px;
-        }
-        
-        .dos-donts h4 {
-            font-size: 1.4em;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        
-        .dos-donts.dos h4 {
-            color: #5a8a6a;
-        }
-        
-        .dos-donts.donts h4 {
-            color: #c97676;
-        }
-        
-        .dos-donts ul {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .dos-donts li {
-            padding: 12px;
-            margin-bottom: 10px;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        
-        .dos li {
-            background: #f0f9f5;
-            border-left: 4px solid #a5d4b5;
-        }
-        
-        .dos li::before {
-            content: '✓';
-            color: #5a8a6a;
-            font-weight: bold;
-            font-size: 1.3em;
-        }
-        
-        .donts li {
-            background: #fff5f5;
-            border-left: 4px solid #d4a5a5;
-        }
-        
-        .donts li::before {
-            content: '×';
-            color: #c97676;
-            font-weight: bold;
-            font-size: 1.3em;
-        }
-        
-        /* INTERACTIVE ELEMENTS */
-        .interactive-palette {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-            gap: 15px;
-            margin: 30px 0;
-        }
-        
-        .palette-item {
-            text-align: center;
-            cursor: pointer;
-            transition: transform 0.2s;
-        }
-        
-        .palette-item:hover {
-            transform: scale(1.05);
-        }
-        
-        .palette-color {
-            width: 100%;
-            aspect-ratio: 1;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-            margin-bottom: 10px;
-        }
-        
-        .palette-name {
-            font-size: 0.9em;
-            color: #6a5253;
-            font-weight: 600;
-        }
-        
-        .palette-hex {
-            font-size: 0.75em;
-            color: #8a7273;
-            font-family: monospace;
-        }
-        
-        /* RESPONSIVE */
-        @media (max-width: 1200px) {
-            .main-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .sidebar {
-                position: relative;
-                top: 0;
-            }
-            
-            .colortype-comparison,
-            .mistakes-grid,
-            .hairstyle-grid,
-            .outfit-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        /* VISUAL INDICATORS */
-        .emoji-large {
-            font-size: 3em;
-            display: block;
-            text-align: center;
-            margin: 20px 0;
-        }
-        
-        .highlight-box {
-            background: linear-gradient(135deg, #fffbf5 0%, #fff5eb 100%);
-            border: 2px solid #f0d5b8;
-            padding: 20px;
-            border-radius: 10px;
-            margin: 20px 0;
-        }
-        
-        .tip-icon {
-            display: inline-block;
-            background: #c8a59d;
-            color: white;
-            width: 25px;
-            height: 25px;
-            border-radius: 50%;
-            text-align: center;
-            line-height: 25px;
-            font-weight: 600;
-            margin-right: 8px;
-        }
-        /* PINTEREST-STYLE GALLERY */
+      @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: #f8f5f2;
+    color: #4a4a4a;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1, h2, h3 {
+    font-family: 'Cormorant Garamond', serif;
+}
+
+.container {
+    max-width: 1600px;
+    margin: 0 auto;
+    background: white;
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+}
+
+.slide-in-left {
+    animation: slideInLeft 0.6s ease-out forwards;
+}
+
+.slide-in-right {
+    animation: slideInRight 0.6s ease-out forwards;
+}
+
+/* HEADER */
+.hero {
+    background: linear-gradient(135deg, #e8d5d0 0%, #d4bfb8 100%);
+    padding: 60px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '✨';
+    position: absolute;
+    font-size: 100px;
+    opacity: 0.1;
+    top: 20px;
+    left: 10%;
+    animation: pulse 3s infinite;
+}
+
+.hero::after {
+    content: '💫';
+    position: absolute;
+    font-size: 80px;
+    opacity: 0.1;
+    bottom: 20px;
+    right: 10%;
+    animation: pulse 3s infinite 1.5s;
+}
+
+.hero h1 {
+    font-size: 4em;
+    font-weight: 300;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 15px;
+    letter-spacing: 4px;
+    animation: fadeIn 1s ease-out;
+}
+
+.hero p {
+    font-size: 1.4em;
+    color: rgba(255,255,255,0.95);
+    font-style: italic;
+    animation: fadeIn 1s ease-out 0.3s backwards;
+}
+
+/* MOBILE MENU TOGGLE */
+.mobile-menu-toggle {
+    display: none;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    background: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    cursor: pointer;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    transition: all 0.3s;
+}
+
+.mobile-menu-toggle:hover {
+    transform: scale(1.1);
+}
+
+.mobile-menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: #c8a59d;
+    border-radius: 3px;
+    transition: all 0.3s;
+}
+
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(8px, -8px);
+}
+
+/* NAVIGATION TABS */
+.nav-tabs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background: #f5ebe8;
+    padding: 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+}
+
+.nav-tab {
+    padding: 20px 30px;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #8a7273;
+    transition: all 0.3s;
+    border-bottom: 3px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-tab::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background: #c8a59d;
+    transition: all 0.3s;
+    transform: translateX(-50%);
+}
+
+.nav-tab:hover::before {
+    width: 100%;
+}
+
+.nav-tab:hover {
+    background: rgba(212, 191, 184, 0.2);
+    color: #6a5253;
+}
+
+.nav-tab.active {
+    border-bottom: 3px solid #c8a59d;
+    color: #6a5253;
+    background: white;
+}
+
+/* MAIN CONTENT GRID */
+.main-grid {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    min-height: 600px;
+}
+
+/* SIDEBAR WITH PHOTO */
+.sidebar {
+    background: linear-gradient(180deg, #f9f6f4 0%, #f0ebe8 100%);
+    padding: 40px;
+    border-right: 1px solid #e8ddd8;
+    position: sticky;
+    top: 70px;
+    height: fit-content;
+    animation: slideInLeft 0.8s ease-out;
+}
+
+.photo-container {
+    margin-bottom: 30px;
+}
+
+.main-photo {
+    width: 100%;
+    border: 10px solid white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    border-radius: 5px;
+    transition: transform 0.3s;
+}
+
+.main-photo:hover {
+    transform: scale(1.02);
+}
+
+.quick-info {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    margin-bottom: 20px;
+    transition: all 0.3s;
+}
+
+.quick-info:hover {
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+.quick-info h3 {
+    color: #c8a59d;
+    font-size: 1.6em;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.info-item {
+    padding: 10px 0;
+    border-bottom: 1px solid #f0ebe8;
+    transition: all 0.3s;
+}
+
+.info-item:hover {
+    background: #f9f6f4;
+    padding-left: 10px;
+}
+
+.info-item:last-child {
+    border-bottom: none;
+}
+
+.info-label {
+    font-weight: 600;
+    color: #8a7273;
+    font-size: 0.9em;
+}
+
+.info-value {
+    color: #4a4a4a;
+    font-size: 1.05em;
+}
+
+/* CONTENT SECTIONS */
+.content {
+    padding: 40px;
+    animation: fadeIn 0.8s ease-out;
+}
+
+.section {
+    display: none;
+}
+
+.section.active {
+    display: block;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.section-header {
+    font-size: 2.5em;
+    color: #c8a59d;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 3px solid #e8d5d0;
+    animation: slideInLeft 0.6s ease-out;
+}
+
+/* All cards and boxes get subtle hover effects */
+.colortype-card, .mistake-card, .makeup-step, .hairstyle-card, 
+.outfit-card, .figure-section, .highlight-box {
+    transition: all 0.3s ease;
+}
+
+.colortype-card:hover, .makeup-step:hover, .hairstyle-card:hover,
+.outfit-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+/* COLORTYPE COMPARISON */
+.colortype-comparison {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.colortype-card {
+    background: linear-gradient(135deg, #fff9f7 0%, #f5ebe8 100%);
+    padding: 30px;
+    border-radius: 15px;
+    border: 3px solid #e8d5d0;
+    position: relative;
+}
+
+.colortype-card.recommended {
+    border-color: #c8a59d;
+    box-shadow: 0 8px 25px rgba(200, 165, 157, 0.3);
+}
+
+.colortype-card.recommended::before {
+    content: '⭐ РЕКОМЕНДУЕТСЯ';
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #c8a59d;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-weight: 600;
+}
+
+.colortype-card h3 {
+    font-size: 2em;
+    color: #8a7273;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.colortype-description {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.color-swatches {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.color-swatch {
+    aspect-ratio: 1;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    display: flex;
+    align-items: flex-end;
+    padding: 8px;
+    color: white;
+    font-size: 0.75em;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    font-weight: 600;
+    transition: transform 0.3s;
+}
+
+.color-swatch:hover {
+    transform: scale(1.1);
+    z-index: 10;
+}
+
+.test-box {
+    background: #fff5f0;
+    border-left: 4px solid #e8a59d;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.test-box h4 {
+    color: #c8a59d;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+/* MISTAKES SECTION */
+.mistakes-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.mistake-card {
+    background: #fff5f5;
+    border-left: 5px solid #d4a5a5;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+.mistake-card h4 {
+    color: #c97676;
+    font-size: 1.3em;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.mistake-card h4::before {
+    content: '❌';
+    font-size: 1.2em;
+}
+
+.fix-section {
+    background: #f0f9f5;
+    border-left: 5px solid #a5d4b5;
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 5px;
+}
+
+.fix-section h5 {
+    color: #5a8a6a;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.fix-section h5::before {
+    content: '✅';
+}
+
+/* MAKEUP VISUAL GUIDE */
+.makeup-steps {
+    display: grid;
+    gap: 30px;
+}
+
+.makeup-step {
+    background: linear-gradient(135deg, #fff 0%, #faf8f6 100%);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.step-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.step-number {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #e8d5d0, #d4bfb8);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8em;
+    font-weight: 600;
+    color: white;
+    flex-shrink: 0;
+    transition: all 0.3s;
+}
+
+.makeup-step:hover .step-number {
+    transform: rotate(360deg);
+}
+
+.step-title {
+    font-size: 1.8em;
+    color: #6a5253;
+}
+
+.step-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 25px;
+}
+
+.step-description {
+    padding-right: 20px;
+}
+
+.step-visual {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #f0ebe8;
+    text-align: center;
+}
+
+.product-recommendation {
+    background: #f9f6f4;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 15px;
+    border-left: 3px solid #c8a59d;
+}
+
+.product-recommendation h5 {
+    color: #8a7273;
+    margin-bottom: 8px;
+    font-size: 1.1em;
+}
+
+/* COLOR VISUALIZATION */
+.makeup-color-demo {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.color-demo-item {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.color-demo-item:hover {
+    transform: scale(1.15);
+}
+
+.color-demo-label {
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.75em;
+    white-space: nowrap;
+    color: #6a5253;
+    font-weight: 600;
+}
+
+/* HAIRSTYLE GUIDE */
+.hairstyle-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.hairstyle-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.hairstyle-card:hover {
+    transform: translateY(-5px);
+}
+
+.hairstyle-image {
+    width: 100%;
+    height: 250px;
+    background: linear-gradient(135deg, #f5ebe8, #e8d5d0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4em;
+    color: rgba(106, 82, 83, 0.3);
+}
+
+.hairstyle-info {
+    padding: 20px;
+}
+
+.hairstyle-info h4 {
+    color: #6a5253;
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+
+.hairstyle-steps {
+    list-style: none;
+    padding-left: 0;
+}
+
+.hairstyle-steps li {
+    padding: 8px 0;
+    padding-left: 25px;
+    position: relative;
+    font-size: 0.95em;
+    color: #6a6a6a;
+}
+
+.hairstyle-steps li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: #c8a59d;
+    font-weight: bold;
+}
+
+/* OUTFIT BUILDER */
+.outfit-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.outfit-card {
+    background: linear-gradient(135deg, #fff 0%, #faf8f6 100%);
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.outfit-card h4 {
+    color: #c8a59d;
+    font-size: 1.6em;
+    margin-bottom: 20px;
+    text-align: center;
+    border-bottom: 2px solid #e8d5d0;
+    padding-bottom: 15px;
+}
+
+.outfit-items {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.outfit-item {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    border-left: 4px solid #c8a59d;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: all 0.3s;
+}
+
+.outfit-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.outfit-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #e8d5d0, #d4bfb8);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    flex-shrink: 0;
+}
+
+.outfit-item-details {
+    flex: 1;
+}
+
+.outfit-item-name {
+    font-weight: 600;
+    color: #6a5253;
+    margin-bottom: 3px;
+}
+
+.outfit-item-color {
+    font-size: 0.9em;
+    color: #8a7273;
+}
+
+/* FIGURE GUIDE */
+.figure-section {
+    background: linear-gradient(135deg, #fff9f7 0%, #f5ebe8 100%);
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+}
+
+.figure-visual {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.dos-donts {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+.dos-donts h4 {
+    font-size: 1.4em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.dos-donts.dos h4 {
+    color: #5a8a6a;
+}
+
+.dos-donts.donts h4 {
+    color: #c97676;
+}
+
+.dos-donts ul {
+    list-style: none;
+    padding: 0;
+}
+
+.dos-donts li {
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.3s;
+}
+
+.dos-donts li:hover {
+    transform: translateX(5px);
+}
+
+.dos li {
+    background: #f0f9f5;
+    border-left: 4px solid #a5d4b5;
+}
+
+.dos li::before {
+    content: '✓';
+    color: #5a8a6a;
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+.donts li {
+    background: #fff5f5;
+    border-left: 4px solid #d4a5a5;
+}
+
+.donts li::before {
+    content: '×';
+    color: #c97676;
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+/* SHOPPING LIST */
+.shopping-categories {
+    display: grid;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.shopping-category {
+    background: linear-gradient(135deg, #fff 0%, #faf8f6 100%);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.category-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #e8d5d0;
+}
+
+.category-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #e8d5d0, #d4bfb8);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8em;
+    flex-shrink: 0;
+}
+
+.category-title {
+    flex: 1;
+}
+
+.category-title h3 {
+    color: #6a5253;
+    font-size: 1.8em;
+    margin-bottom: 5px;
+}
+
+.category-title p {
+    color: #8a7273;
+    font-size: 0.95em;
+}
+
+.shopping-items {
+    display: grid;
+    gap: 15px;
+}
+
+.shopping-item {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 4px solid #c8a59d;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 15px;
+    align-items: center;
+    transition: all 0.3s;
+}
+
+.shopping-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.shopping-item.checked {
+    opacity: 0.6;
+    background: #f9f6f4;
+}
+
+.shopping-item.checked .item-name {
+    text-decoration: line-through;
+}
+
+.item-checkbox {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    accent-color: #c8a59d;
+}
+
+.item-details {
+    flex: 1;
+}
+
+.item-name {
+    font-weight: 600;
+    color: #6a5253;
+    font-size: 1.1em;
+    margin-bottom: 5px;
+}
+
+.item-description {
+    color: #8a7273;
+    font-size: 0.9em;
+    line-height: 1.4;
+}
+
+.item-price {
+    font-weight: 600;
+    color: #c8a59d;
+    font-size: 1.1em;
+}
+
+.priority-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.8em;
+    font-weight: 600;
+    margin-top: 5px;
+}
+
+.priority-high {
+    background: #ffe5e5;
+    color: #c97676;
+}
+
+.priority-medium {
+    background: #fff5e5;
+    color: #d4a574;
+}
+
+.priority-low {
+    background: #e5f5f0;
+    color: #5a8a6a;
+}
+
+/* PINTEREST-STYLE GALLERY */
 .pinterest-grid {
     column-count: 3;
     column-gap: 20px;
@@ -804,17 +1039,212 @@
     line-height: 1.6;
 }
 
-@media (max-width: 1200px) {
+/* INTERACTIVE ELEMENTS */
+.interactive-palette {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.palette-item {
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.palette-item:hover {
+    transform: scale(1.05);
+}
+
+.palette-color {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    margin-bottom: 10px;
+}
+
+.palette-name {
+    font-size: 0.9em;
+    color: #6a5253;
+    font-weight: 600;
+}
+
+.palette-hex {
+    font-size: 0.75em;
+    color: #8a7273;
+    font-family: monospace;
+}
+
+.emoji-large {
+    font-size: 3em;
+    display: block;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.highlight-box {
+    background: linear-gradient(135deg, #fffbf5 0%, #fff5eb 100%);
+    border: 2px solid #f0d5b8;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.tip-icon {
+    display: inline-block;
+    background: #c8a59d;
+    color: white;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 25px;
+    font-weight: 600;
+    margin-right: 8px;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 1024px) {
+    .hero h1 {
+        font-size: 3em;
+    }
+    
+    .mobile-menu-toggle {
+        display: flex;
+    }
+    
+    .nav-tabs {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 80%;
+        max-width: 300px;
+        height: 100vh;
+        flex-direction: column;
+        align-items: stretch;
+        background: white;
+        box-shadow: 4px 0 15px rgba(0,0,0,0.2);
+        padding: 80px 0 20px;
+        transition: left 0.3s ease;
+        overflow-y: auto;
+    }
+    
+    .nav-tabs.active {
+        left: 0;
+    }
+    
+    .nav-tab {
+        padding: 20px 30px;
+        text-align: left;
+        border-bottom: 1px solid #f5ebe8;
+        border-left: 4px solid transparent;
+    }
+    
+    .nav-tab.active {
+        border-left: 4px solid #c8a59d;
+        border-bottom: 1px solid #f5ebe8;
+    }
+    
+    .main-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .sidebar {
+        position: relative;
+        top: 0;
+    }
+    
+    .colortype-comparison,
+    .mistakes-grid,
+    .figure-visual {
+        grid-template-columns: 1fr;
+    }
+    
+    .hairstyle-grid,
+    .outfit-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .step-content {
+        grid-template-columns: 1fr;
+    }
+    
     .pinterest-grid {
         column-count: 2;
     }
 }
 
 @media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5em;
+        letter-spacing: 2px;
+    }
+    
+    .hero p {
+        font-size: 1.1em;
+    }
+    
+    .hero {
+        padding: 40px 20px;
+    }
+    
+    .content {
+        padding: 20px;
+    }
+    
+    .section-header {
+        font-size: 2em;
+    }
+    
+    .color-swatches {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
     .pinterest-grid {
         column-count: 1;
     }
+    
+    .nav-tabs {
+        max-width: 100%;
+        width: 100%;
+    }
 }
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2em;
+    }
+    
+    .sidebar {
+        padding: 20px;
+    }
+    
+    .step-number {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5em;
+    }
+}
+
+/* PRINT STYLES */
+@media print {
+    .nav-tabs,
+    .mobile-menu-toggle {
+        display: none;
+    }
+    
+    .section {
+        display: block !important;
+        page-break-after: always;
+    }
+    
+    .main-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
     </style>
 </head>
 <body>
@@ -826,14 +1256,20 @@
         </div>
         
         <!-- NAVIGATION -->
-        <div class="nav-tabs">
-            <button class="nav-tab active" onclick="showSection('colortype')">🎨 Цветотип</button>
+        <div class="nav-tabs"><button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+</button>
+
+<div class="nav-tabs" id="navTabs">            <button class="nav-tab active" onclick="showSection('colortype')">🎨 Цветотип</button>
             <button class="nav-tab" onclick="showSection('mistakes')">❌ Ошибки</button>
             <button class="nav-tab" onclick="showSection('makeup')">💄 Макияж</button>
             <button class="nav-tab" onclick="showSection('hair')">💇‍♀️ Укладка</button>
             <button class="nav-tab" onclick="showSection('outfits')">👗 Образы</button>
             <button class="nav-tab" onclick="showSection('figure')">📐 Фигура</button>
             <button class="nav-tab" onclick="showSection('inspiration')">✨ Вдохновение</button>
+            <button class="nav-tab" onclick="showSection('shopping')">🛍️ Шоппинг</button>
         </div>
         
         <!-- MAIN GRID -->
@@ -1828,33 +2264,462 @@
         <p style="margin-top: 20px;"><strong>Способ 2:</strong> Используйте любой бесплатный хостинг изображений (imgur.com, imgbb.com) и вставьте прямую ссылку на картинку.</p>
     </div>
 </div>
+                <!-- SECTION 7: SHOPPING LIST -->
+<div id="shopping" class="section">
+    <h2 class="section-header">🛍️ Шоппинг-лист</h2>
+    
+    <div class="upload-prompt">
+        <h3>💳 Ваш персональный список покупок</h3>
+        <p>Отмечайте купленные вещи галочками. Список автоматически сохраняется!</p>
+    </div>
+    
+    <div class="shopping-categories">
+        
+        <!-- CATEGORY 1: БАЗОВЫЙ ГАРДЕРОБ -->
+        <div class="shopping-category">
+            <div class="category-header">
+                <div class="category-icon">👚</div>
+                <div class="category-title">
+                    <h3>Базовый гардероб</h3>
+                    <p>Основа вашего стиля</p>
+                </div>
+            </div>
+            
+            <div class="shopping-items">
+                <div class="shopping-item">
+                    <input type="checkbox" class="item-checkbox" onchange="saveShoppingList()">
+                    <div class="item-details">
+                        <div class="item-name">Блуза с V-вырезом</div>
+                        <div class="item-description">Персиковый или пыльно-розовый цвет. Шелк или вискоза.<span class="priority-badge priority-high">Приоритет</span></div>
+                    </div>
+                    <div class="item-price">~3000₽</div>
+                </div>
+                
+                <div class="shopping-item">
+                    <input type="checkbox" class="item-checkbox" onchange="saveShoppingList()">
+                    <div class="item-details">
+                        <div class="item-name">Джинсы прямого кроя</div>
+                        <div class="item-description">Средняя посадка, голубые или темно-синие.<span class="priority-badge priority-high">Приоритет</span></div>
+                    </div>
+                    <div class="item-price">~4000₽</div>
+                </div>
+                
+                <div class="shopping-item">
+                    <input type="checkbox" class="item-checkbox" onchange="saveShoppingList()">
+                    <div class="item-details">
+                        <div class="item-name">Приталенный жакет</div>
+                        <div class="item-description">Беж, какао или серо-коричневый. Длина до бедра.<span class="priority-badge priority-medium">Желательно</span></div>
+                    </div>
+                    <div class="item-price">~5000₽</div>
+                </div>
+                
+                <div class="shopping-item">
+                    <input type="checkbox" class="item-checkbox" onchange="saveShoppingList()">
+                    <div class="item-details">
+                        <div class="item-name">Юбка А-силуэта</div>
+                        <div class="item-description">Темно-оливковая, серая или черная. Длина миди.</div>
+                    </div>
+                    <div class="item-price">~2500₽</div>
+                </div>
+                
+                <div class="shopping-item">
+                    <input type="checkbox" class="item-checkbox" onchange="saveShoppingList()">
+                    <div class="item-details">
+                        <div class="item-name">Свитер мягкий</div>
+                        <div class="item-description">Кремовый или серо-голубой. Натуральный трикотаж.</div>
+                    </div>
+                    <div class="item-price">~3500₽</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- CATEGORY 2: МАКИЯЖ -->
+        <div class="shopping-category">
+            <div class="category-header">
+                <div class="category-icon">💄</div>
+                <div class="category-title">
+                    <h3>Косметика</h3>
+                    <p>Базовый набор для ежедневного макияжа</p>
+                </div>
+            </div>
+            
+            <div class="shopping-items">
+                <div class="shopping-item">
+                    <input type="checkbox" class="item-checkbox" onchange="saveShoppingList()">
+                    <div class="item-details">
+                        <div class="item-name">BB-крем</div>
+                        <div class="item-description">С теплым или нейтрально-розовым подтоном.<span class="priority-badge priority-high">Приоритет</span></div>
+                    </div>
+                    <div class="item-price">~1500₽</div>
+                </div>
+                
+                <div class="shopping-item">
+                    <input type="checkbox" class="item-checkbox" onchange="saveShoppingList()">
+                    <div class="item-details">
+                        <div class="item-name">Консилер</div>
+                        <div class="item-description">Персиково-розовый, на 1-2 тона светлее кожи.<span class="priority-badge priority-high">Приоритет</span></div>
+                    </div>
+                    <div class="item-price">~800₽</div>
+                </div>
+                
+                <div class="shopping-item">
+                    <input type="checkbox" class="item-checkbox" onchange="saveShoppingList()">
+                    <div class="item-details">
+                        <div class="item-name">Карандаш для бровей</div>
+                        <div class="item-description">Теплый коричневый или пепельно-коричневый.<span class="priority-badge priority-high">Приоритет</span></div>
+                    </div>
+                    <div class="item-price">~600₽</div>
+                </div>
+                
+                <div class="shopping-item">
+                    <input type="checkbox" class="item-checkbox" onchange="saveShoppingList()">
+                    <div class="item-details">
+                        <div class="item-name">Палетка теней</div>
+                        <div class="item-description">Персик, золото, коричневый или серо-коричневый, лавандовый.</div>
+                    </div>
+                    <div class="item-price">~1200₽</div>
+                </div>
+                
+                <div class="shopping-item">
+                    <input type="checkbox" class="item-checkbox" onchange="saveShoppingList()">
+                    <div class="item-details">
+                        <div class="item-name">Тушь коричневая</div>
+                        <div class="item-description">Удлиняющая формула.</div>
+                    </div>
+                    <div class="item-price">~700₽</div>
+                </div>
+                
+                <div class="shopping-item">
+                    <input type="checkbox" class="item-checkbox" onchange="saveShoppingList()">
+                    <div class="item-details">
+                        <div class="item-name">Румяна кремовые</div>
+                        <div class="item-description">Коралловые, персиковые или пыльно-розовые.<span class="priority-badge priority-medium">Желательно</span></div>
+                    </div>
+                    <div class="item-price">~900₽</div>
+                </div>
+                
+                <div class="shopping-item">
+                    <input type="checkbox" class="item-checkbox" onchange="saveShoppingList()">
+                    <div class="item-details">
+                        <div class="item-name">Помада/тинт</div>
+                        <div class="item-description">Пыльно-розовая, коралловая или брусничная.</div>
+                    </div>
+                    <div class="item-price">~800₽</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- CATEGORY 3: АКСЕССУАРЫ -->
+        <div class="shopping-category">
+            <div class="category-header">
+                <div class="category-icon">💎</div>
+                <div class="category-title">
+                    <h3>Аксессуары</h3>
+                    <p>Детали, завершающие образ</p>
+                </div>
+            </div>
+            
+            <div class="shopping-items">
+                <div class="shopping-item">
+                    <input type="checkbox" class="item-checkbox" onchange="saveShoppingList()">
+                    <div class="item-details">
+                        <div class="item-name">Серьги-кольца средние</div>
+                        <div class="item-description">Золото или серебро (в зависимости от цветотипа).<span class="priority-badge priority-medium">Желательно</span></div>
+                    </div>
+                    <div class="item-price">~1500₽</div>
+                </div>
+                
+                <div class="shopping-item">
+                    <input type="checkbox" class="item-checkbox" onchange="saveShoppingList()">
+                    <div class="item-details">
+                        <div class="item-name">Тонкий ремень</div>
+                        <div class="item-description">Бежевый или коричневый. Для подчеркивания талии.</div>
+                    </div>
+                    <div class="item-price">~1000₽</div>
+                </div>
+                
+                <div class="shopping-item">
+                    <input type="checkbox" class="item-checkbox" onchange="saveShoppingList()">
+                    <div class="item-details">
+                        <div class="item-name">Шарф</div>
+                        <div class="item-description">Коралловый, пыльно-розовый или серо-голубой.</div>
+                    </div>
+                    <div class="item-price">~800₽</div>
+                </div>
+                
+                <div class="shopping-item">
+                    <input type="checkbox" class="item-checkbox" onchange="saveShoppingList()">
+                    <div class="item-details">
+                        <div class="item-name">Сумка среднего размера</div>
+                        <div class="item-description">Бежевая, серо-коричневая или пыльно-розовая.<span class="priority-badge priority-low">По желанию</span></div>
+                    </div>
+                    <div class="item-price">~3000₽</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- CATEGORY 4: ИНСТРУМЕНТЫ ДЛЯ УКЛАДКИ -->
+        <div class="shopping-category">
+            <div class="category-header">
+                <div class="category-icon">💇‍♀️</div>
+                <div class="category-title">
+                    <h3>Инструменты и средства для волос</h3>
+                    <p>Для создания идеальных укладок</p>
+                </div>
+            </div>
+            
+            <div class="shopping-items">
+                <div class="shopping-item">
+                    <input type="checkbox" class="item-checkbox" onchange="saveShoppingList()">
+                    <div class="item-details">
+                        <div class="item-name">Плойка 32-40мм</div>
+                        <div class="item-description">Для создания мягких волн.<span class="priority-badge priority-high">Приоритет</span></div>
+                    </div>
+                    <div class="item-price">~2500₽</div>
+                </div>
+                
+                <div class="shopping-item">
+                    <input type="checkbox" class="item-checkbox" onchange="saveShoppingList()">
+                    <div class="item-details">
+                        <div class="item-name">Круглая щетка</div>
+                        <div class="item-description">Среднего диаметра для объема у корней.</div>
+                    </div>
+                    <div class="item-price">~600₽</div>
+                </div>
+                
+                <div class="shopping-item">
+                    <input type="checkbox" class="item-checkbox" onchange="saveShoppingList()">
+                    <div class="item-details">
+                        <div class="item-name">Мусс для объема</div>
+                        <div class="item-description">Легкая фиксация, не утяжеляет.<span class="priority-badge priority-medium">Желательно</span></div>
+                    </div>
+                    <div class="item-price">~500₽</div>
+                </div>
+                
+                <div class="shopping-item">
+                    <input type="checkbox" class="item-checkbox" onchange="saveShoppingList()">
+                    <div class="item-details">
+                        <div class="item-name">Текстурирующий спрей</div>
+                        <div class="item-description">Для естественной фиксации и текстуры.</div>
+                    </div>
+                    <div class="item-price">~700₽</div>
+                </div>
+                
+                <div class="shopping-item">
+                    <input type="checkbox" class="item-checkbox" onchange="saveShoppingList()">
+                    <div class="item-details">
+                        <div class="item-name">Термозащита</div>
+                        <div class="item-description">Обязательна перед использованием плойки/утюжка!</div>
+                    </div>
+                    <div class="item-price">~600₽</div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <div class="highlight-box" style="margin-top: 40px; background: linear-gradient(135deg, #f0f9f5 0%, #e8f5f0 100%); border-color: #a5d4b5;">
+        <h3 style="color: #5a8a6a; margin-bottom: 15px;">💡 Советы по покупкам</h3>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px;">
+            <div>
+                <h4 style="color: #5a8a6a; margin-bottom: 10px;">✓ Начните с приоритетных вещей</h4>
+                <p>Сначала купите базовый макияж и 2-3 предмета одежды с пометкой "Приоритет".</p>
+            </div>
+            <div>
+                <h4 style="color: #5a8a6a; margin-bottom: 10px;">✓ Проверьте цвета перед покупкой</h4>
+                <p>Приложите вещь к лицу при дневном свете — она должна вас освежать, а не старить.</p>
+            </div>
+            <div>
+                <h4 style="color: #5a8a6a; margin-bottom: 10px;">✓ Качество важнее количества</h4>
+                <p>Лучше купить 1 хорошую вещь, чем 3 посредственных. Натуральные ткани прослужат дольше.</p>
+            </div>
+            <div>
+                <h4 style="color: #5a8a6a; margin-bottom: 10px;">✓ Примерка обязательна</h4>
+                <p>Особенно для одежды с фигурой "груша" — проверяйте, как сидит талия и бедра.</p>
+            </div>
+        </div>
+        
+        <p style="margin-top: 20px; text-align: center; font-weight: 600; color: #5a8a6a;">
+            💳 Примерный бюджет для старта: 15 000 - 25 000₽
+        </p>
+    </div>
+</div>
+
             </div>
         </div>
     </div>
     
     <script>
-        function showSection(sectionId) {
-            // Hide all sections
-            const sections = document.querySelectorAll('.section');
-            sections.forEach(section => {
-                section.classList.remove('active');
-            });
-            
-            // Remove active class from all tabs
-            const tabs = document.querySelectorAll('.nav-tab');
-            tabs.forEach(tab => {
-                tab.classList.remove('active');
-            });
-            
-            // Show selected section
-            document.getElementById(sectionId).classList.add('active');
-            
-            // Add active class to clicked tab
-            event.target.classList.add('active');
-            
-            // Scroll to top of content
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+       // Mobile menu toggle
+function toggleMobileMenu() {
+    const navTabs = document.getElementById('navTabs');
+    const menuToggle = document.querySelector('.mobile-menu-toggle');
+    
+    navTabs.classList.toggle('active');
+    menuToggle.classList.toggle('active');
+}
+
+// Close mobile menu when clicking on a tab
+function showSection(sectionId) {
+    // Hide all sections
+    const sections = document.querySelectorAll('.section');
+    sections.forEach(section => {
+        section.classList.remove('active');
+    });
+    
+    // Remove active class from all tabs
+    const tabs = document.querySelectorAll('.nav-tab');
+    tabs.forEach(tab => {
+        tab.classList.remove('active');
+    });
+    
+    // Show selected section
+    document.getElementById(sectionId).classList.add('active');
+    
+    // Add active class to clicked tab
+    event.target.classList.add('active');
+    
+    // Close mobile menu if open
+    const navTabs = document.getElementById('navTabs');
+    const menuToggle = document.querySelector('.mobile-menu-toggle');
+    if (navTabs.classList.contains('active')) {
+        navTabs.classList.remove('active');
+        menuToggle.classList.remove('active');
+    }
+    
+    // Scroll to top of content smoothly
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', function(event) {
+    const navTabs = document.getElementById('navTabs');
+    const menuToggle = document.querySelector('.mobile-menu-toggle');
+    
+    if (navTabs && navTabs.classList.contains('active')) {
+        if (!navTabs.contains(event.target) && !menuToggle.contains(event.target)) {
+            navTabs.classList.remove('active');
+            menuToggle.classList.remove('active');
         }
+    }
+});
+
+// Shopping list save/load functionality
+function saveShoppingList() {
+    const checkboxes = document.querySelectorAll('.shopping-item .item-checkbox');
+    const states = Array.from(checkboxes).map(cb => cb.checked);
+    localStorage.setItem('shoppingListStates', JSON.stringify(states));
+    
+    // Update visual state
+    checkboxes.forEach((checkbox, index) => {
+        const item = checkbox.closest('.shopping-item');
+        if (checkbox.checked) {
+            item.classList.add('checked');
+        } else {
+            item.classList.remove('checked');
+        }
+    });
+}
+
+function loadShoppingList() {
+    const saved = localStorage.getItem('shoppingListStates');
+    if (saved) {
+        const states = JSON.parse(saved);
+        const checkboxes = document.querySelectorAll('.shopping-item .item-checkbox');
+        checkboxes.forEach((checkbox, index) => {
+            if (states[index]) {
+                checkbox.checked = true;
+                checkbox.closest('.shopping-item').classList.add('checked');
+            }
+        });
+    }
+}
+
+// Load shopping list on page load
+window.addEventListener('DOMContentLoaded', function() {
+    loadShoppingList();
+    
+    // Add fade-in animation to elements as they come into view
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '0';
+                entry.target.style.animation = 'fadeIn 0.6s ease-out forwards';
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+    
+    // Observe all major elements
+    const elementsToAnimate = document.querySelectorAll(
+        '.makeup-step, .hairstyle-card, .outfit-card, .shopping-category, .mistake-card, .colortype-card'
+    );
+    
+    elementsToAnimate.forEach(el => {
+        observer.observe(el);
+    });
+});
+
+// Swipe navigation for mobile
+let touchStartX = 0;
+let touchEndX = 0;
+
+document.addEventListener('touchstart', function(event) {
+    touchStartX = event.changedTouches[0].screenX;
+}, false);
+
+document.addEventListener('touchend', function(event) {
+    touchEndX = event.changedTouches[0].screenX;
+    handleSwipe();
+}, false);
+
+function handleSwipe() {
+    const swipeThreshold = 100;
+    const diff = touchEndX - touchStartX;
+    
+    if (Math.abs(diff) > swipeThreshold) {
+        const activeTab = document.querySelector('.nav-tab.active');
+        const allTabs = Array.from(document.querySelectorAll('.nav-tab'));
+        const currentIndex = allTabs.indexOf(activeTab);
+        
+        if (diff > 0 && currentIndex > 0) {
+            // Swipe right - go to previous section
+            allTabs[currentIndex - 1].click();
+        } else if (diff < 0 && currentIndex < allTabs.length - 1) {
+            // Swipe left - go to next section
+            allTabs[currentIndex + 1].click();
+        }
+    }
+}
+
+// Smooth scroll for internal links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+
+// Add loading animation
+window.addEventListener('load', function() {
+    document.body.style.opacity = '0';
+    setTimeout(function() {
+        document.body.style.transition = 'opacity 0.5s';
+        document.body.style.opacity = '1';
+    }, 100);
+});
+
     </script>
 </body>
 </html>
