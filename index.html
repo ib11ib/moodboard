@@ -23,7 +23,7 @@
 
         <div class="nav-tabs" id="navTabs">
             <button class="nav-tab active" onclick="showSection('colortype')">🎨 Цветотип</button>
-            <button class="nav-tab" onclick="showSection('mistakes')">❌ Ошибки</button>
+            <button class="nav-tab" onclick="showSection('antistyle')">🚫 Анти-стиль</button>
             <button class="nav-tab" onclick="showSection('makeup')">💄 Макияж</button>
             <button class="nav-tab" onclick="showSection('hair')">💇‍♀️ Укладка</button>
             <button class="nav-tab" onclick="showSection('outfits')">👗 Образы</button>
@@ -38,14 +38,22 @@
             <!-- SIDEBAR -->
             <div class="sidebar">
                 <div class="photo-container">
-                    <img src="https://i.imgur.com/GnygQ4d.jpeg" alt="Ваше фото" class="main-photo">
+                    <img src="img/profile.jpg" alt="Ваше фото" class="main-photo">
                 </div>
 
                 <div class="quick-info">
                     <h3>Ваши данные</h3>
                     <div class="info-item">
                         <div class="info-label">Рост / Вес</div>
-                        <div class="info-value">163 см / 57 кг</div>
+                        <div class="info-value">163 см / 55 кг</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Размер-база</div>
+                        <div class="info-value">44 RU</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Параметры</div>
+                        <div class="info-value">ОГ 88 / ОТ 72 / ОБ 98</div>
                     </div>
                     <div class="info-item">
                         <div class="info-label">Тип фигуры</div>
@@ -53,27 +61,57 @@
                     </div>
                     <div class="info-item">
                         <div class="info-label">Форма лица</div>
-                        <div class="info-value">Овал</div>
+                        <div class="info-value">Мягкий квадрат</div>
                     </div>
                     <div class="info-item">
                         <div class="info-label">Цвет глаз</div>
-                        <div class="info-value">Серо-зеленый</div>
+                        <div class="info-value">Серо-зелёный с тёплыми нотками</div>
                     </div>
                     <div class="info-item">
                         <div class="info-label">Цвет волос</div>
-                        <div class="info-value">Русый с золотистым</div>
+                        <div class="info-value">Русый с золотистым, волнистые</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Металлы</div>
+                        <div class="info-value">Тёплое золото, позолота, antique brass</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Талисман</div>
+                        <div class="info-value">Кулон Пегас</div>
                     </div>
                 </div>
-                
-                <div class="quick-info">
-                    <h3>Ваш архетип</h3>
-                    <div style="text-align: center; padding: 15px 0;">
-                        <div style="font-size: 2.5em; color: #c8a59d; margin-bottom: 10px;">
-                            Романтик + Натурал
+
+                <div class="quick-info archetypes">
+                    <h3>Три эстетических архетипа</h3>
+
+                    <div class="archetype">
+                        <div class="archetype-name"><span>📚</span>Academic Romantic</div>
+                        <p class="archetype-desc">Интеллектуальная женственность, книги, винтаж</p>
+                        <div class="archetype-palette">
+                            <i style="background:#C9971C" title="Горчица"></i><i style="background:#5C1F2A" title="Бордо"></i><i style="background:#F3E9D7" title="Кремовый"></i>
+                            <span>горчица · бордо · кремовый</span>
                         </div>
-                        <div style="color: #8a7273; font-style: italic;">
-                            Мягкие линии, женственность,<br>естественная красота
+                        <p class="archetype-items"><b>Ключевые вещи:</b> горчичная рубашка, кулон Пегас, бордовый берет</p>
+                    </div>
+
+                    <div class="archetype">
+                        <div class="archetype-name"><span>🌸</span>Melting Lady</div>
+                        <p class="archetype-desc">Мягкость, нежность, драпировки</p>
+                        <div class="archetype-palette">
+                            <i style="background:#5C1F2A" title="Бордо"></i><i style="background:#E8B4A6" title="Розовый"></i><i style="background:#EDE4D6" title="Жемчужный"></i>
+                            <span>бордо · розовый · жемчужный</span>
                         </div>
+                        <p class="archetype-items"><b>Ключевые вещи:</b> атласное платье, кружевное боди, серьги-розы</p>
+                    </div>
+
+                    <div class="archetype">
+                        <div class="archetype-name"><span>💎</span>Old Money</div>
+                        <p class="archetype-desc">Элегантность вне времени, сдержанная роскошь</p>
+                        <div class="archetype-palette">
+                            <i style="background:#A05C2C" title="Коньяк"></i><i style="background:#4A2E1F" title="Шоколадный"></i><i style="background:#D9BE97" title="Тёплый беж"></i>
+                            <span>коньяк · шоколадный · тёплый беж</span>
+                        </div>
+                        <p class="archetype-items"><b>Ключевые вещи:</b> лоферы с трензелем, кожаная сумка, винтажные часы</p>
                     </div>
                 </div>
             </div>
@@ -83,329 +121,203 @@
                 
                 <!-- SECTION 1: COLORTYPE -->
                 <div id="colortype" class="section active">
-                    <h2 class="section-header">🎨 Определение цветотипа</h2>
-                    
-                    <div class="highlight-box">
-                        <h3 style="color: #c8a59d; margin-bottom: 15px;">⚠️ Важно! Два варианта цветотипа</h3>
-                        <p>Анализ показал два возможных варианта. Пройдите простые тесты ниже, чтобы определить ваш точный цветотип!</p>
-                    </div>
-                    
-                    <div class="colortype-comparison">
-                        <!-- WARM SPRING -->
-                        <div class="colortype-card">
-                            <h3>🌸 Теплая Весна</h3>
-                            <div class="colortype-description">
-                                <p><strong>Характеристики:</strong> Теплый золотистый подтон кожи, светлые глаза с теплыми нотками, волосы с золотистым отливом.</p>
-                                <p style="margin-top: 10px;"><strong>Ключевые цвета:</strong> Персиковый, коралловый, теплый бирюзовый, абрикосовый, золотистый беж, оливковый.</p>
-                            </div>
-                            <div class="color-swatches">
-                                <div class="color-swatch" style="background: #F6E6D8;">Крем</div>
-                                <div class="color-swatch" style="background: #F2B8A0;">Коралл</div>
-                                <div class="color-swatch" style="background: #E8A87C;">Абрикос</div>
-                                <div class="color-swatch" style="background: #D4A574;">Карамель</div>
-                                <div class="color-swatch" style="background: #A67C52;">Золотистый</div>
-                                <div class="color-swatch" style="background: #8ABFC6;">Бирюза</div>
-                                <div class="color-swatch" style="background: #6B8B4A;">Оливка</div>
-                                <div class="color-swatch" style="background: #B85C5C;">Кирпич</div>
-                                <div class="color-swatch" style="background: #6D3B2B;">Шоколад</div>
-                                <div class="color-swatch" style="background: #D4AF37;">Золото</div>
-                            </div>
-                            <div class="test-box">
-                                <h4>✨ Вам подходит, если:</h4>
-                                <ul style="list-style: none; padding: 0;">
-                                    <li>✓ Золотые украшения освежают лицо</li>
-                                    <li>✓ Персиковый делает вас сияющей</li>
-                                    <li>✓ Теплые оттенки придают здоровый вид</li>
-                                    <li>✓ Холодные цвета делают бледной</li>
-                                </ul>
-                            </div>
+                    <h2 class="section-header">🎨 Цветотип</h2>
+
+                    <div class="colortype-card confirmed">
+                        <h3>🌸 Тёплая Весна <span class="confirmed-mark">· Подтверждён</span></h3>
+                        <div class="colortype-description">
+                            <p><strong>Характеристики:</strong> Тёплый золотистый подтон кожи, серо-зелёные глаза с тёплыми нотками, русые волнистые волосы с золотистым отливом.</p>
+                            <p style="margin-top: 10px;"><strong>Ключевые цвета:</strong> Винный, бордо, горчица, коньяк, коралловый, кремовый, шоколадный.</p>
                         </div>
-                        
-                        <!-- SOFT SUMMER -->
-                        <div class="colortype-card recommended">
-                            <h3>🌿 Мягкое Лето</h3>
-                            <div class="colortype-description">
-                                <p><strong>Характеристики:</strong> Нейтрально-холодный подтон, приглушенные цвета волос, серо-зеленые глаза, мягкие черты.</p>
-                                <p style="margin-top: 10px;"><strong>Ключевые цвета:</strong> Пыльно-розовый, серо-голубой, лавандовый, пыльный зеленый, какао, брусничный.</p>
-                            </div>
-                            <div class="color-swatches">
-                                <div class="color-swatch" style="background: #c8b5b7;">Пыльная роза</div>
-                                <div class="color-swatch" style="background: #9fa8b0;">Серо-голубой</div>
-                                <div class="color-swatch" style="background: #a8b5a0;">Пыльный зеленый</div>
-                                <div class="color-swatch" style="background: #b8a5a8;">Лиловый</div>
-                                <div class="color-swatch" style="background: #9ba8a8;">Мятно-серый</div>
-                                <div class="color-swatch" style="background: #a89088;">Какао</div>
-                                <div class="color-swatch" style="background: #8a9fa8;">Пепельно-синий</div>
-                                <div class="color-swatch" style="background: #a89098;">Брусника</div>
-                                <div class="color-swatch" style="background: #b5a8b0;">Дымчатый</div>
-                                <div class="color-swatch" style="background: #9098a0;">Серебро</div>
-                            </div>
-                            <div class="test-box">
-                                <h4>✨ Вам подходит, если:</h4>
-                                <ul style="list-style: none; padding: 0;">
-                                    <li>✓ Серебряные украшения освежают лицо</li>
-                                    <li>✓ Пыльно-розовый делает вас свежей</li>
-                                    <li>✓ Приглушенные цвета гармоничны</li>
-                                    <li>✓ Яркие теплые старят</li>
-                                </ul>
-                            </div>
+                        <h4 class="palette-title">Ядро палитры · 7 цветов</h4>
+                        <div class="core-swatches">
+                            <div class="core-swatch"><div class="swatch-chip" style="background:#7A3040"></div><b>Винный</b><code>#7A3040</code></div>
+                            <div class="core-swatch"><div class="swatch-chip" style="background:#5C1F2A"></div><b>Бордо</b><code>#5C1F2A</code></div>
+                            <div class="core-swatch"><div class="swatch-chip" style="background:#C9971C"></div><b>Горчица</b><code>#C9971C</code></div>
+                            <div class="core-swatch"><div class="swatch-chip" style="background:#A05C2C"></div><b>Коньяк</b><code>#A05C2C</code></div>
+                            <div class="core-swatch"><div class="swatch-chip" style="background:#E8836B"></div><b>Коралловый</b><code>#E8836B</code></div>
+                            <div class="core-swatch"><div class="swatch-chip" style="background:#F3E9D7"></div><b>Кремовый</b><code>#F3E9D7</code></div>
+                            <div class="core-swatch"><div class="swatch-chip" style="background:#4A2E1F"></div><b>Шоколадный</b><code>#4A2E1F</code></div>
+                        </div>
+                        <div class="test-box">
+                            <h4>✨ Вам подходит, если:</h4>
+                            <ul style="list-style: none; padding: 0;">
+                                <li>✓ Золотые украшения освежают лицо</li>
+                                <li>✓ Горчица и бордо работают как базовые цвета</li>
+                                <li>✓ Тёплые оттенки придают здоровый вид</li>
+                                <li>✓ Холодные цвета (серый, лавандовый, пыльно-розовый) гасят кожу</li>
+                            </ul>
                         </div>
                     </div>
-                    
-                    <div class="highlight-box">
-                        <h3 style="color: #c8a59d; margin-bottom: 20px;"><span class="tip-icon">!</span>Как определить ваш цветотип</h3>
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px;">
-                            <div>
-                                <h4 style="color: #6a5253; margin-bottom: 10px;">Тест 1: Украшения</h4>
-                                <p>Приложите к лицу золотую и серебряную ткань/украшение при дневном свете.</p>
-                                <ul style="margin-top: 10px;">
-                                    <li><strong>Золото освежает?</strong> → Теплая Весна</li>
-                                    <li><strong>Серебро освежает?</strong> → Мягкое Лето</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h4 style="color: #6a5253; margin-bottom: 10px;">Тест 2: Цвета</h4>
-                                <p>Приложите персиковую и пыльно-розовую ткань к лицу.</p>
-                                <ul style="margin-top: 10px;">
-                                    <li><strong>Персиковый освежает?</strong> → Теплая Весна</li>
-                                    <li><strong>Пыльно-розовый освежает?</strong> → Мягкое Лето</li>
-                                </ul>
-                            </div>
+
+                    <div class="highlight-box palette-extended">
+                        <h3 class="block-title">Расширенная палитра</h3>
+                        <p class="block-lead">Для макияжа, летних блуз, кожи и вечерних акцентов</p>
+                        <div class="ext-swatches">
+                            <div class="ext-swatch"><div class="swatch-chip" style="background:#F2B896"></div><b>Персик</b><code>#F2B896</code></div>
+                            <div class="ext-swatch"><div class="swatch-chip" style="background:#E8A66B"></div><b>Абрикос</b><code>#E8A66B</code></div>
+                            <div class="ext-swatch"><div class="swatch-chip" style="background:#C68A4B"></div><b>Карамель</b><code>#C68A4B</code></div>
+                            <div class="ext-swatch"><div class="swatch-chip" style="background:#6B7A3A"></div><b>Оливка</b><code>#6B7A3A</code></div>
+                            <div class="ext-swatch"><div class="swatch-chip" style="background:#4E9A8E"></div><b>Тёплая бирюза</b><code>#4E9A8E</code></div>
+                            <div class="ext-swatch"><div class="swatch-chip" style="background:#E8D5B5"></div><b>Шампань</b><code>#E8D5B5</code></div>
+                            <div class="ext-swatch"><div class="swatch-chip" style="background:#D9BE97"></div><b>Золотистый беж</b><code>#D9BE97</code></div>
+                            <div class="ext-swatch"><div class="swatch-chip" style="background:#B85C38"></div><b>Терракота</b><code>#B85C38</code></div>
                         </div>
-                        <p style="margin-top: 20px; font-style: italic; color: #8a7273;">
-                            💡 Совет: Сделайте селфи в обоих цветах и сравните — какой делает кожу более свежей и сияющей?
-                        </p>
+                    </div>
+
+                    <div class="highlight-box jewelry">
+                        <h3 class="block-title">💍 Ювелирная конституция</h3>
+                        <p class="block-lead">Только тёплые металлы:</p>
+                        <div class="metals">
+                            <div class="metal"><div class="metal-chip gold"></div><b>Тёплое золото</b></div>
+                            <div class="metal"><div class="metal-chip gilt"></div><b>Позолота</b></div>
+                            <div class="metal"><div class="metal-chip brass"></div><b>Antique brass</b><small>состаренная латунь</small></div>
+                        </div>
+                        <p class="metal-no">✕ Серебро и белое золото — дают серый рефлекс на коже, гасят золотистый подтон</p>
                     </div>
                 </div>
-                
-                <!-- SECTION 2: MISTAKES -->
-                <div id="mistakes" class="section">
-                    <h2 class="section-header">❌ Что сейчас не работает</h2>
-                    <div class="mistakes-grid">
-                        <div class="mistake-card">
-                            <h4>Желтый свитер</h4>
-                            <p>Этот яркий теплый желтый слишком контрастный и активный для вашего цветотипа. Он старит лицо и делает кожу тусклой.</p>
-                            <div class="fix-section">
-                                <h5>Чем заменить:</h5>
-                                <p><strong>Для Теплой Весны:</strong> Мягкий персиковый, абрикосовый, светло-коралловый</p>
-                                <p><strong>Для Мягкого Лета:</strong> Пыльно-розовый, серо-голубой, лавандовый</p>
-                            </div>
-                        </div>
-                        <div class="mistake-card">
-                            <h4>Отсутствие макияжа</h4>
-                            <p>Без макияжа теряются красивые серо-зеленые глаза, брови выглядят размытыми, лицо кажется уставшим из-за теней под глазами.</p>
-                            <div class="fix-section">
-                                <h5>Минимальный макияж (5 минут):</h5>
-                                <p>• Консилер под глаза<br>• Оформить брови карандашом<br>• Тушь коричневая<br>• Розово-персиковый тинт на губы</p>
-                            </div>
-                        </div>
-                        <div class="mistake-card">
-                            <h4>Центральный пробор</h4>
-                            <p>Пробор посередине утяжеляет овал лица и убирает объем, делая пропорции менее гармоничными.</p>
-                            <div class="fix-section">
-                                <h5>Решение:</h5>
-                                <p><strong>Боковой пробор</strong> (справа налево) создает объем, визуально удлиняет лицо и добавляет динамику образу.</p>
-                            </div>
-                        </div>
-                        <div class="mistake-card">
-                            <h4>Тусклые волосы без объема</h4>
-                            <p>Волосы выглядят безжизненно, нет объема у корней, отсутствует структура и форма.</p>
-                            <div class="fix-section">
-                                <h5>Быстрое решение:</h5>
-                                <p>• Мусс для объема на корни<br>• Сушка с круглой щеткой<br>• Легкие волны утюжком<br>• Текстурирующий спрей</p>
-                            </div>
-                        </div>
-                        <div class="mistake-card">
-                            <h4>Тени под глазами</h4>
-                            <p>Естественные тени под глазами делают взгляд уставшим и добавляют возраста.</p>
-                            <div class="fix-section">
-                                <h5>Маскировка:</h5>
-                                <p>Консилер с персиково-розовым подтоном (не холодный!) на 1-2 тона светлее кожи. Наносить треугольником и растушевывать.</p>
-                            </div>
-                        </div>
-                        <div class="mistake-card">
-                            <h4>Отсутствие акцента на верх</h4>
-                            <p>При фигуре "груша" нужно визуально расширять плечи, но сейчас акцент не смещен вверх.</p>
-                            <div class="fix-section">
-                                <h5>Как исправить:</h5>
-                                <p>• V-образный вырез<br>• Яркие топы и блузы<br>• Детали на плечах<br>• Объемные рукава<br>• Низ — темный однотонный</p>
-                            </div>
-                        </div>
+
+                <!-- SECTION 2: ANTI-STYLE -->
+                <div id="antistyle" class="section">
+                    <h2 class="section-header">🚫 Анти-стиль</h2>
+
+                    <div class="anti-block">
+                        <h3 class="anti-title">⛔ Что нельзя</h3>
+                        <p class="anti-lead">Вещи, которые противоречат твоему цветотипу, типажу и эстетике. Не носить никогда.</p>
+                        <table class="anti-table">
+                            <thead><tr><th>Что нельзя</th><th>Почему</th></tr></thead>
+                            <tbody>
+                                <tr><td data-label="Что нельзя"><span class="anti-x">✕</span>Серебро и белое золото</td><td data-label="Почему">Дают серый рефлекс на коже, гасят золотистый подтон</td></tr>
+                                <tr><td data-label="Что нельзя"><span class="anti-x">✕</span>Холодные цвета у лица: холодный серый, лавандовый, пыльно-розовый, серо-голубой</td><td data-label="Почему">Делают лицо тусклым, подчёркивают тени</td></tr>
+                                <tr><td data-label="Что нельзя"><span class="anti-x">✕</span>Чёрный тотал у лица</td><td data-label="Почему">Резкий контраст старит, убивает тёплый румянец</td></tr>
+                                <tr><td data-label="Что нельзя"><span class="anti-x">✕</span>Неон и кислотные оттенки</td><td data-label="Почему">Конфликтуют с мягкой эстетикой Academic Romantic</td></tr>
+                                <tr><td data-label="Что нельзя"><span class="anti-x">✕</span>Логотипы и блестящее «новое» золото</td><td data-label="Почему">Противоречат Old Money (сдержанность, антикварность)</td></tr>
+                                <tr><td data-label="Что нельзя"><span class="anti-x">✕</span>Гладкий атлас днём</td><td data-label="Почему">Атлас — только вечер, днём выглядит как пижама</td></tr>
+                                <tr><td data-label="Что нельзя"><span class="anti-x">✕</span>Пепельные оттенки волос</td><td data-label="Почему">Холодный блонд гасит Тёплую Весну</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="anti-block">
+                        <h3 class="anti-title">⚠️ Что не подходит</h3>
+                        <p class="anti-lead">Фасоны и крои, которые противоречат фигуре «груша» и типажу Романтик + Натурал.</p>
+                        <table class="anti-table four">
+                            <thead><tr><th>Что не подходит</th><th>По фигуре / типажу</th><th>Почему</th><th>Альтернатива</th></tr></thead>
+                            <tbody>
+                                <tr><td data-label="Что не подходит"><span class="anti-x">✕</span>Юбка-карандаш</td><td data-label="По фигуре / типажу"><span class="anti-tag">Груша (ОБ 98)</span></td><td data-label="Почему">Подчёркивает самую широкую часть</td><td data-label="Альтернатива" class="anti-alt"><span class="anti-ok">✓</span>Юбка А-силуэт, миди</td></tr>
+                                <tr><td data-label="Что не подходит"><span class="anti-x">✕</span>Мини-юбки</td><td data-label="По фигуре / типажу"><span class="anti-tag">Груша + Academic Romantic</span></td><td data-label="Почему">Открывает бёдра, ломает элегантность</td><td data-label="Альтернатива" class="anti-alt"><span class="anti-ok">✓</span>Миди и макси</td></tr>
+                                <tr><td data-label="Что не подходит"><span class="anti-x">✕</span>Обтягивающие светлые брюки на бёдрах</td><td data-label="По фигуре / типажу"><span class="anti-tag">Груша</span></td><td data-label="Почему">Рисуют объём там, где не нужно</td><td data-label="Альтернатива" class="anti-alt"><span class="anti-ok">✓</span>Тёмные низы или свободный крой</td></tr>
+                                <tr><td data-label="Что не подходит"><span class="anti-x">✕</span>Укороченные топы</td><td data-label="По фигуре / типажу"><span class="anti-tag">Груша (ОТ 72, ОБ 98)</span></td><td data-label="Почему">Акцент на переход талия→бёдра</td><td data-label="Альтернатива" class="anti-alt"><span class="anti-ok">✓</span>Топы, заправленные в юбку/брюки</td></tr>
+                                <tr><td data-label="Что не подходит"><span class="anti-x">✕</span>Низкая посадка брюк</td><td data-label="По фигуре / типажу"><span class="anti-tag">Груша + рост 163</span></td><td data-label="Почему">Укорачивает ноги, ломает пропорции</td><td data-label="Альтернатива" class="anti-alt"><span class="anti-ok">✓</span>Высокая посадка</td></tr>
+                                <tr><td data-label="Что не подходит"><span class="anti-x">✕</span>Мешковатый верх без талии</td><td data-label="По фигуре / типажу"><span class="anti-tag">Груша</span></td><td data-label="Почему">Теряется талия 72 см</td><td data-label="Альтернатива" class="anti-alt"><span class="anti-ok">✓</span>Приталенный крой или ремень</td></tr>
+                                <tr><td data-label="Что не подходит"><span class="anti-x">✕</span>Карманы сзади на брюках/юбках</td><td data-label="По фигуре / типажу"><span class="anti-tag">Груша</span></td><td data-label="Почему">Добавляют объём бёдрам</td><td data-label="Альтернатива" class="anti-alt"><span class="anti-ok">✓</span>Гладкие задние половинки</td></tr>
+                                <tr><td data-label="Что не подходит"><span class="anti-x">✕</span>Горизонтальные полосы внизу</td><td data-label="По фигуре / типажу"><span class="anti-tag">Груша</span></td><td data-label="Почему">Расширяют бёдра визуально</td><td data-label="Альтернатива" class="anti-alt"><span class="anti-ok">✓</span>Вертикаль или однотонный низ</td></tr>
+                                <tr><td data-label="Что не подходит"><span class="anti-x">✕</span>Пеплум ниже линии бёдер</td><td data-label="По фигуре / типажу"><span class="anti-tag">Груша</span></td><td data-label="Почему">Рисует самую широкую точку</td><td data-label="Альтернатива" class="anti-alt"><span class="anti-ok">✓</span>Пеплум 6–8 см от талии (выше бёдер)</td></tr>
+                                <tr><td data-label="Что не подходит"><span class="anti-x">✕</span>Гладкие зализанные укладки</td><td data-label="По фигуре / типажу"><span class="anti-tag">Романтик + Натурал</span></td><td data-label="Почему">Слишком строго, убивает мягкость</td><td data-label="Альтернатива" class="anti-alt"><span class="anti-ok">✓</span>Мягкие волны, низкий пучок с прядями</td></tr>
+                                <tr><td data-label="Что не подходит"><span class="anti-x">✕</span>Викторианские стойки-воротники</td><td data-label="По фигуре / типажу"><span class="anti-tag">Романтик + Натурал</span></td><td data-label="Почему">Устаревший силуэт, не Academic</td><td data-label="Альтернатива" class="anti-alt"><span class="anti-ok">✓</span>Острый отложной воротник (Lagertha)</td></tr>
+                                <tr><td data-label="Что не подходит"><span class="anti-x">✕</span>Баска-2010</td><td data-label="По фигуре / типажу"><span class="anti-tag">Романтик + Натурал</span></td><td data-label="Почему">Устаревший крой, не Old Money</td><td data-label="Альтернатива" class="anti-alt"><span class="anti-ok">✓</span>Мягкий пеплум Vikisews Jolene</td></tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
-                
+
                 <!-- SECTION 3: MAKEUP -->
                 <div id="makeup" class="section">
-                    <h2 class="section-header">💄 Макияж: Пошаговая инструкция</h2>
-                    <div class="makeup-steps">
-                        <div class="makeup-step">
-                            <div class="step-header">
-                                <div class="step-number">1</div>
-                                <h3 class="step-title">Подготовка кожи</h3>
-                            </div>
-                            <div class="step-content">
-                                <div class="step-description">
-                                    <p><strong>Что делаем:</strong> Увлажнение + Праймер</p>
-                                    <p style="margin-top: 10px;">Нанесите увлажняющий крем и дайте впитаться 2-3 минуты. Затем нанесите праймер для сглаживания пор и увеличения стойкости макияжа.</p>
-                                    <div class="product-recommendation">
-                                        <h5>💡 Рекомендации продуктов:</h5>
-                                        <p>• Увлажняющий крем с гиалуроновой кислотой<br>• Праймер с размывающим эффектом (для пор)<br>• Для жирной Т-зоны: матирующий праймер</p>
-                                    </div>
-                                </div>
-                                <div class="step-visual">
-                                    <div class="emoji-large">🧴</div>
-                                    <p style="color: #8a7273;">Легкая текстура<br>Быстрое впитывание</p>
-                                </div>
-                            </div>
+                    <h2 class="section-header">💄 Макияж</h2>
+                    <p class="section-sub">Два режима: повседневный минимум и полный макияж на выход</p>
+
+                    <div class="mode-tabs" role="tablist">
+                        <button class="mode-tab active" role="tab" aria-selected="true" aria-controls="mode-daily" data-mode="daily">🌅 Повседневный</button>
+                        <button class="mode-tab" role="tab" aria-selected="false" aria-controls="mode-evening" data-mode="evening">🎭 На выход</button>
+                    </div>
+
+                    <div class="mode-panel daily active" id="mode-daily" role="tabpanel">
+                        <h3 class="mode-title">🌅 Повседневный минимум · 5 минут</h3>
+                        <p class="mode-lead">На каждый день — только три шага. Брови покрашены краской раз в месяц, кожа ухожена, остальное минимально.</p>
+                        <div class="mk-head"><span>Шаг</span><span>Что делать</span><span>Продукт</span></div>
+                        <div class="mk-step">
+                            <div class="mk-num">1</div>
+                            <div class="mk-zone">Тушь</div>
+                            <div class="mk-desc">Коричневая тушь (удлиняющая формула)</div>
+                            
                         </div>
-                        <div class="makeup-step">
-                            <div class="step-header">
-                                <div class="step-number">2</div>
-                                <h3 class="step-title">Тон и консилер</h3>
-                            </div>
-                            <div class="step-content">
-                                <div class="step-description">
-                                    <p><strong>Тональное средство:</strong> Легкий BB-крем или тональный флюид</p>
-                                    <p style="margin-top: 10px;"><strong>Для Теплой Весны:</strong> Теплый бежевый или персиковый подтон<br><strong>Для Мягкого Лета:</strong> Нейтрально-розовый подтон</p>
-                                    <p style="margin-top: 15px;"><strong>Консилер под глаза:</strong> На 1-2 тона светлее кожи с теплым персиково-розовым подтоном. Наносить треугольником от внутреннего уголка глаза вниз.</p>
-                                    <div class="product-recommendation">
-                                        <h5>💡 Техника нанесения:</h5>
-                                        <p>1. Тон наносить влажным спонжем похлопывающими движениями<br>2. Консилер наносить кистью, растушевывать спонжем<br>3. Закрепить легкой рассыпчатой пудрой</p>
-                                    </div>
-                                </div>
-                                <div class="step-visual">
-                                    <h4 style="color: #6a5253; margin-bottom: 15px;">Оттенки консилера:</h4>
-                                    <div class="makeup-color-demo">
-                                        <div class="color-demo-item" style="background: #f5d5c0;"><div class="color-demo-label">Персик</div></div>
-                                        <div class="color-demo-item" style="background: #f0c8b8;"><div class="color-demo-label">Розовый</div></div>
-                                        <div class="color-demo-item" style="background: #e8b8a8;"><div class="color-demo-label">Теплый</div></div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="mk-step">
+                            <div class="mk-num">2</div>
+                            <div class="mk-zone">Гель для бровей</div>
+                            <div class="mk-desc">Прозрачный или тёплый коричневый гель (брови уже окрашены краской)</div>
+                            
                         </div>
-                        <div class="makeup-step">
-                            <div class="step-header">
-                                <div class="step-number">3</div>
-                                <h3 class="step-title">Брови</h3>
-                            </div>
-                            <div class="step-content">
-                                <div class="step-description">
-                                    <p><strong>Цель:</strong> Четкая, но естественная форма</p>
-                                    <p style="margin-top: 10px;"><strong>Для Теплой Весны:</strong> Теплый коричневый<br><strong>Для Мягкого Лета:</strong> Пепельно-коричневый, серо-коричневый</p>
-                                    <p style="margin-top: 15px;"><strong>Техника:</strong></p>
-                                    <p>1. Расчешите брови щеточкой вверх<br>2. Карандашом заполните пробелы короткими штрихами<br>3. Растушуйте щеточкой<br>4. Зафиксируйте гелем</p>
-                                    <div class="product-recommendation">
-                                        <h5>💡 Нужные продукты:</h5>
-                                        <p>• Карандаш для бровей (мягкий)<br>• Или тени для бровей + скошенная кисть<br>• Прозрачный гель для фиксации</p>
-                                    </div>
-                                </div>
-                                <div class="step-visual">
-                                    <div class="emoji-large">✏️</div>
-                                    <p style="color: #8a7273; margin-top: 15px;"><strong>Форма:</strong><br>Мягкая, с небольшим изгибом<br>Не слишком тонкие!</p>
-                                </div>
-                            </div>
+                        <div class="mk-step">
+                            <div class="mk-num">3</div>
+                            <div class="mk-zone">Бальзам для губ</div>
+                            <div class="mk-desc">Тёплый персиковый или коралловый бальзам</div>
+                            
                         </div>
-                        <div class="makeup-step">
-                            <div class="step-header">
-                                <div class="step-number">4</div>
-                                <h3 class="step-title">Глаза</h3>
-                            </div>
-                            <div class="step-content">
-                                <div class="step-description">
-                                    <p><strong>Цель:</strong> Подчеркнуть серо-зеленые глаза, создать глубину</p>
-                                    <p style="margin-top: 15px;"><strong>Дневной макияж:</strong></p>
-                                    <p>1. <strong>База:</strong> Персиково-бежевые тени на все веко<br>2. <strong>Складка:</strong> Теплый коричневый или серо-коричневый<br>3. <strong>Внутренний уголок:</strong> Светлый шиммер (шампань)<br>4. <strong>Ресницы:</strong> Коричневая тушь</p>
-                                    <p style="margin-top: 15px;"><strong>Вечерний макияж:</strong></p>
-                                    <p>+ Темно-зеленый или бордовый акцент<br>+ Мягкая стрелка коричневым карандашом<br>+ Черная тушь</p>
-                                    <div class="product-recommendation">
-                                        <h5>💡 Палитра теней:</h5>
-                                        <p><strong>Теплая Весна:</strong> Персик, золото, теплый коричневый, оливковый<br><strong>Мягкое Лето:</strong> Серо-коричневый, лавандовый, пыльно-розовый, зеленый</p>
-                                    </div>
-                                </div>
-                                <div class="step-visual">
-                                    <h4 style="color: #6a5253; margin-bottom: 15px;">Ваши цвета теней:</h4>
-                                    <div class="makeup-color-demo">
-                                        <div class="color-demo-item" style="background: #d4b5a0;"><div class="color-demo-label">База</div></div>
-                                        <div class="color-demo-item" style="background: #9a7a65;"><div class="color-demo-label">Складка</div></div>
-                                        <div class="color-demo-item" style="background: #8a9a7a;"><div class="color-demo-label">Акцент</div></div>
-                                        <div class="color-demo-item" style="background: #f0e5d8;"><div class="color-demo-label">Хайлайт</div></div>
-                                    </div>
-                                </div>
-                            </div>
+                        <p class="mode-note">Этого достаточно для кафе, прогулок, работы. Кожа уже подготовлена уходом, брови держат форму после окрашивания.</p>
+                    </div>
+
+                    <div class="mode-panel evening" id="mode-evening" role="tabpanel">
+                        <h3 class="mode-title">🎭 На выход · Полный макияж</h3>
+                        <p class="mode-lead">Для театра, вечеринок, фотосессий. Брови уже окрашены краской — пропускаем шаг с карандашом.</p>
+                        <div class="mk-head"><span>Шаг</span><span>Зона</span><span>Что делать</span><span>Оттенки</span></div>
+                        <div class="mk-step">
+                            <div class="mk-num">1</div>
+                            <div class="mk-zone">Подготовка</div>
+                            <div class="mk-desc">Увлажнение + праймер</div>
+                            <div class="mk-shades"><span>Лёгкая текстура</span><span>Быстрое впитывание</span></div>
                         </div>
-                        <div class="makeup-step">
-                            <div class="step-header">
-                                <div class="step-number">5</div>
-                                <h3 class="step-title">Румяна</h3>
-                            </div>
-                            <div class="step-content">
-                                <div class="step-description">
-                                    <p><strong>Куда наносить:</strong> На "яблочки" щек и немного вверх к вискам</p>
-                                    <p style="margin-top: 15px;"><strong>Для Теплой Весны:</strong> Кремовый коралл, персик, абрикос<br><strong>Для Мягкого Лета:</strong> Пыльно-розовый, холодный розовый, брусничный</p>
-                                    <div class="product-recommendation">
-                                        <h5>💡 Техника нанесения:</h5>
-                                        <p>1. Нанести пальцем или кистью на яблочки щек<br>2. Растушевать вверх к вискам<br>3. НЕ наносить слишком низко (опускает лицо)</p>
-                                    </div>
-                                </div>
-                                <div class="step-visual">
-                                    <h4 style="color: #6a5253; margin-bottom: 15px;">Ваши оттенки румян:</h4>
-                                    <div class="makeup-color-demo">
-                                        <div class="color-demo-item" style="background: #f2a89a;"><div class="color-demo-label">Коралл</div></div>
-                                        <div class="color-demo-item" style="background: #e8b8b0;"><div class="color-demo-label">Персик</div></div>
-                                        <div class="color-demo-item" style="background: #d4a5a8;"><div class="color-demo-label">Пыльная роза</div></div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="mk-step">
+                            <div class="mk-num">2</div>
+                            <div class="mk-zone">Тон и консилер</div>
+                            <div class="mk-desc">Лёгкий BB-крем или тональный флюид</div>
+                            <div class="mk-shades"><span>Тёплый бежевый или персиковый подтон</span><span>Консилер на 1–2 тона светлее кожи, тёплый персиково-розовый подтон</span></div>
                         </div>
-                        <div class="makeup-step">
-                            <div class="step-header">
-                                <div class="step-number">6</div>
-                                <h3 class="step-title">Губы</h3>
-                            </div>
-                            <div class="step-content">
-                                <div class="step-description">
-                                    <p><strong>Для Теплой Весны:</strong><br>• Дневной: Розово-персиковый тинт, коралловый бальзам<br>• Вечерний: Кораллово-кирпичная помада, теплая красная</p>
-                                    <p style="margin-top: 10px;"><strong>Для Мягкого Лета:</strong><br>• Дневной: Пыльно-розовый тинт, нюдовый бальзам<br>• Вечерний: Брусничная помада, приглушенная красная</p>
-                                    <div class="product-recommendation">
-                                        <h5>💡 Лайфхак:</h5>
-                                        <p>Для более полных губ: нанесите консилер на контур, затем помаду, в центр — каплю блеска</p>
-                                    </div>
-                                </div>
-                                <div class="step-visual">
-                                    <h4 style="color: #6a5253; margin-bottom: 15px;">Ваши оттенки помад:</h4>
-                                    <div class="makeup-color-demo">
-                                        <div class="color-demo-item" style="background: #e8a8a0;"><div class="color-demo-label">Коралл</div></div>
-                                        <div class="color-demo-item" style="background: #d4a5a8;"><div class="color-demo-label">Роза</div></div>
-                                        <div class="color-demo-item" style="background: #c88585;"><div class="color-demo-label">Брусника</div></div>
-                                        <div class="color-demo-item" style="background: #b87565;"><div class="color-demo-label">Кирпич</div></div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="mk-step skip">
+                            <div class="mk-num">3</div>
+                            <div class="mk-zone">Брови</div>
+                            <div class="mk-desc"><span class="mk-skip-badge">Пропускаем</span> Брови окрашены краской раз в месяц</div>
+                            <div class="mk-shades"><span>Только гель для фиксации — прозрачный или тёплый коричневый</span></div>
                         </div>
-                        <div class="makeup-step">
-                            <div class="step-header">
-                                <div class="step-number">7</div>
-                                <h3 class="step-title">Финальные штрихи</h3>
-                            </div>
-                            <div class="step-content">
-                                <div class="step-description">
-                                    <p><strong>Хайлайтер:</strong> Мягкий шиммер цвета шампань</p>
-                                    <p>Куда наносить: верхняя часть скул, внутренний уголок глаза, галочка над верхней губой, спинка носа (легко!).</p>
-                                    <p style="margin-top: 15px;"><strong>Пудра:</strong> Только на Т-зону. Рассыпчатая прозрачная пудра. Щеки оставьте с сияющим финишем.</p>
-                                    <div class="product-recommendation">
-                                        <h5>💡 Фиксация макияжа:</h5>
-                                        <p>• Спрей-фиксатор на расстоянии 20-30 см<br>• Держать лицо 5-10 секунд<br>• Макияж продержится весь день!</p>
-                                    </div>
-                                </div>
-                                <div class="step-visual">
-                                    <div class="emoji-large">✨</div>
-                                    <p style="color: #8a7273; margin-top: 15px;"><strong>Финиш:</strong><br>Матовая Т-зона<br>Сияющие щеки<br>Свежий вид</p>
-                                </div>
-                            </div>
+                        <div class="mk-step">
+                            <div class="mk-num">4</div>
+                            <div class="mk-zone">Глаза</div>
+                            <div class="mk-desc"><p><b>Дневной:</b> персиково-бежевые тени на всё веко + тёплый коричневый в складку + светлый шиммер во внутренний уголок + коричневая тушь.</p><p><b>Вечерний:</b> добавить тёмно-зелёный или бордовый акцент + мягкая стрелка коричневым карандашом.</p></div>
+                            <div class="mk-shades"><span>Персик</span><span>Золото</span><span>Тёплый коричневый</span><span>Шампань</span><span class='acc'>Акценты: тёмно-зелёный, бордовый</span></div>
                         </div>
+                        <div class="mk-step">
+                            <div class="mk-num">5</div>
+                            <div class="mk-zone">Румяна</div>
+                            <div class="mk-desc">На «яблочки» щёк и немного вверх к вискам</div>
+                            <div class="mk-shades"><span>Кремовый коралл</span><span>Персик</span><span>Абрикос</span></div>
+                        </div>
+                        <div class="mk-step">
+                            <div class="mk-num">6</div>
+                            <div class="mk-zone">Губы</div>
+                            <div class="mk-desc"><p><b>Дневной:</b> розово-персиковый тинт или коралловый бальзам.</p><p><b>Вечерний:</b> кораллово-кирпичная помада или тёплая красная.</p></div>
+                            <div class="mk-shades"><span>Розово-персиковый</span><span>Коралловый</span><span>Кирпичный</span><span>Тёплый красный</span></div>
+                        </div>
+                        <div class="mk-step">
+                            <div class="mk-num">7</div>
+                            <div class="mk-zone">Финальные штрихи</div>
+                            <div class="mk-desc"><p><b>Хайлайтер</b> цвета шампань: верхняя часть скул, внутренний уголок глаза, галочка над верхней губой, спинка носа (легко!).</p><p><b>Пудра:</b> только на Т-зону. Рассыпчатая прозрачная пудра. Щёки оставляем с сияющим финишем.</p></div>
+                            <div class="mk-shades"><span>Шампань</span></div>
+                        </div>
+                        <p class="mode-note"><b>Фиксация:</b> спрей-фиксатор на расстоянии 20–30 см. Держать лицо 5–10 секунд. Макияж продержится весь день.</p>
+                    </div>
+
+                    <div class="brow-block">
+                        <h3 class="block-title">🎨 Окрашивание бровей краской</h3>
+                        <p class="block-lead">Раз в месяц брови окрашиваются краской — это даёт чёткую форму и цвет без ежедневного карандаша.</p>
+                        <dl class="brow-params">
+                            <div><dt>Цвет краски</dt><dd>Тёплый коричневый (не пепельный, не чёрный)</dd></div>
+                            <div><dt>Форма</dt><dd>Мягкая, с небольшим изгибом, не слишком тонкие</dd></div>
+                            <div><dt>Частота</dt><dd>Раз в 3–4 недели</dd></div>
+                            <div><dt>Уход между окрашиваниями</dt><dd>Прозрачный или тёплый коричневый гель для фиксации</dd></div>
+                        </dl>
+                        <p class="mode-note">В шаге 3 полного макияжа пропускаем карандаш — только гель для фиксации.</p>
                     </div>
                 </div>
-                
+
                 <!-- SECTION 4: HAIR -->
                 <div id="hair" class="section">
                     <h2 class="section-header">💇‍♀️ Укладка волос</h2>

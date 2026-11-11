@@ -184,3 +184,15 @@ window.addEventListener('load', function() {
         document.body.style.opacity = '1';
     }, 100);
 });
+
+// Макияж: переключатель «Повседневный» / «На выход»
+document.querySelectorAll('.mode-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+        document.querySelectorAll('.mode-tab').forEach(t => {
+            const on = t === tab;
+            t.classList.toggle('active', on);
+            t.setAttribute('aria-selected', on ? 'true' : 'false');
+            document.getElementById(t.getAttribute('aria-controls')).classList.toggle('active', on);
+        });
+    });
+});
